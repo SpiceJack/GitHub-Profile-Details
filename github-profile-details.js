@@ -13,7 +13,7 @@ async function github() {
         process.exitCode = 1
     }
     const data = await response.json()
-    console.log(`Name: ${data.login}`)
+    console.log(`Name: ${data.name}`)
     console.log(`Username: ${username}`)
     console.log(`Username: ${data.html_url}`)
     console.log(`Public repos: ${data.public_repos}`)
@@ -23,7 +23,7 @@ async function github() {
 async function handleRequest() {
 
 try {
-    github()
+    await github()
 }
 catch {
     console.error("error: error processing request..")
